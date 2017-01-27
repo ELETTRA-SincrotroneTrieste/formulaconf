@@ -1,0 +1,276 @@
+#
+############ VALVES ################
+attr;bool;z_internal_gun_valves;0;tango://srv-tango-srf:20000/inj/vacuum/vlv_inj.01/State == OPEN;Stato Valve Gun
+#
+attr;bool;z_internal_linac_valves;0;\
+tango://srv-tango-srf:20000/inj/vacuum/vlv_inj.01/State == OPEN && \
+tango://srv-tango-srf:20000/l00/vacuum/vlv_l00.01/State == OPEN && \
+tango://srv-tango-srf:20000/lh/vacuum/vlv_lh.01/State == OPEN && \
+tango://srv-tango-srf:20000/l01/vacuum/vlv_l01.01/State == OPEN && \
+tango://srv-tango-srf:20000/xbl01/vacuum/vlv_xbl01.01/State == OPEN && \
+tango://srv-tango-srf:20000/l01/vacuum/vlv_l01.02/State == OPEN && \
+tango://srv-tango-srf:20000/bc01/vacuum/vlv_bc01.01/State == OPEN && \
+tango://srv-tango-srf:20000/bc01/vacuum/vlv_bc01.02/State == OPEN && \
+tango://srv-tango-srf:20000/bc01/vacuum/vlv_bc01.03/State == OPEN && \
+tango://srv-tango-srf:20000/l02/vacuum/vlv_l02.01/State == OPEN && \
+tango://srv-tango-srf:20000/l02/vacuum/vlv_l02.02/State == OPEN && \
+tango://srv-tango-srf:20000/l03/vacuum/vlv_l03.01/State == OPEN && \
+tango://srv-tango-srf:20000/bc02/vacuum/vlv_bc02.01/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.01/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.02/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.03/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.04/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.01/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.02/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.03/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.04/State == OPEN && \
+tango://srv-tango-srf:20000/tls/vacuum/vlv_tls.01/State == OPEN && \
+tango://srv-tango-srf:20000/l04/vacuum/vlv_l04.04/State == OPEN && \
+tango://srv-tango-srf:20000/dbd/vacuum/vlv_dbd.01/State == OPEN;Stato Valve Linac
+#
+attr;bool;z_internal_fel_valves;0;tango://srv-tango-srf:20000/scl/vacuum/vlv_scl.01/State == OPEN;Stato Valve fel
+#
+attr;bool;z_internal_fel1_valves;0;\
+tango://srv-tango-srf:20000/sfel01/vacuum/vlv_sfel01.01/State == OPEN && \
+tango://srv-tango-srf:20000/sfel01/vacuum/vlv_sfel01.02/State == OPEN && \
+tango://srv-tango-srf:20000/mbd_fel01/vacuum/vlv_mbd_fel01.01/State == OPEN && \
+tango://srv-tango-srf:20000/mbd_fel01/vacuum/vlv_mbd_fel01.02/State == OPEN;Stato Valve fel1
+#
+attr;bool;z_internal_fel2_valves;0;\
+tango://srv-tango-srf:20000/sfel02/vacuum/vlv_sfel02.01/State == OPEN && \
+tango://srv-tango-srf:20000/sfel02/vacuum/vlv_sfel02.02/State == OPEN && \
+tango://srv-tango-srf:20000/mbd_fel02/vacuum/vlv_mbd_fel02.01/State == OPEN && \
+tango://srv-tango-srf:20000/mbd/vacuum/vlv_mbd.01/State == OPEN;Stato Valve fel2
+#
+attr;bool;z_internal_padres_valves;0;\
+tango://srv-padres-srf:20000/pos/vacuum/vlv_pos.01/State == OPEN && \
+tango://srv-padres-srf:20000/pos/vacuum/vlv_pos.02/State == OPEN && \
+tango://srv-padres-srf:20000/pos/vacuum/vlv_pos.03/State == OPEN && \
+tango://srv-padres-srf:20000/pos/vacuum/vlv_pos.04/State == OPEN && \
+tango://srv-padres-srf:20000/pos/vacuum/vlv_pos.05/State == OPEN;Stato Valve padres
+#
+attr;bool;z_internal_padres1_valves;0;\
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.01/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.02/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.03/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.04/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.05/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.06/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.07/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.08/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.09/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f01/vacuum/vlv_pfe_f01.10/State == OPEN;Stato Valve padres fel1
+#
+attr;bool;z_internal_padres2_valves;0;\
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.01/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.02/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.03/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.04/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.05/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.06/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.07/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.08/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.09/State == OPEN && \
+tango://srv-padres-srf:20000/pfe_f02/vacuum/vlv_pfe_f02.10/State == OPEN;Stato Valve padres fel2
+#
+attr;bool;z_internal_lines_valves;0;\
+tango://srv-padres-srf:20000/pos_tmx/vacuum/vlv_pos_tmx.01/State == OPEN && \
+tango://srv-padres-srf:20000/pos_tmx/vacuum/vlv_pos_tmx.02/State == OPEN && \
+tango://srv-padres-srf:20000/pos_tmx/vacuum/vlv_pos_tmx.03/State == OPEN && \
+tango://srv-padres-srf:20000/pos_dpi/vacuum/vlv_pos_dpi.01/State == OPEN && \
+tango://srv-padres-srf:20000/pos_dpi/vacuum/vlv_pos_dpi.02/State == OPEN && \
+tango://srv-padres-srf:20000/pos_dpi/vacuum/vlv_pos_dpi.03/State == OPEN && \
+tango://srv-padres-srf:20000/pos_dpi/vacuum/vlv_pos_dpi.04/State == OPEN && \
+tango://srv-padres-srf:20000/pos_ldm/vacuum/vlv_pos_ldm.01/State == OPEN && \
+tango://srv-padres-srf:20000/pos_ldm/vacuum/vlv_pos_ldm.02/State == OPEN && \
+tango://srv-padres-srf:20000/pos_ldm/vacuum/vlv_pos_ldm.03/State == OPEN && \
+tango://srv-padres-srf:20000/pos_tmr/vacuum/vlv_pos_tmr.01/State == OPEN && \
+tango://srv-padres-srf:20000/pos_tmr/vacuum/vlv_pos_tmr.02/State == OPEN && \
+tango://srv-padres-srf:20000/pos_tmr/vacuum/vlv_pos_tmr.03/State == OPEN;Stato Valve lines
+#
+#
+############ BENDING ################
+attr;bool;z_internal_gun_bending;0;tango://srv-tango-srf:20000/spinj/power_supply/psb_spinj.01/State != FAULT;Stato Bending Gun
+#
+attr;bool;z_internal_linac_bending;0;\
+tango://srv-tango-srf:20000/lh/power_supply/psb_lh.01/State != FAULT && \
+tango://srv-tango-srf:20000/lh/magnet/b_lh.01/State != FAULT && \
+tango://srv-tango-srf:20000/splh/magnet/b_splh.01/State != FAULT && \
+tango://srv-tango-srf:20000/bc01/magnet/bc_01.01/State != FAULT && \
+tango://srv-tango-srf:20000/spbc01/magnet/b_spbc01.01/State != FAULT && \
+tango://srv-tango-srf:20000/bc02/magnet/bc_02.01/State != FAULT && \
+tango://srv-tango-srf:20000/dbd/magnet/b_dbd.01/State != FAULT && \
+tango://srv-tango-srf:20000/dbd/magnet/b_dbd.02/State != FAULT;Stato Bending Linac
+#
+attr;bool;z_internal_fel_bending;0;\
+tango://srv-tango-srf:20000/scl/magnet/b_scl.01/State != FAULT && \
+tango://srv-tango-srf:20000/scl/magnet/b_scl.02/State != FAULT && \
+tango://srv-tango-srf:20000/mbd_fel01/magnet/b_mbd_fel01.01/State != FAULT && \
+tango://srv-tango-srf:20000/mbd_fel02/magnet/b_mbd_fel02.01/State != FAULT && \
+tango://srv-tango-srf:20000/mbd/radiation_protection/blm_b_mbd.01_l/State != FAULT && \
+tango://srv-tango-srf:20000/mbd/radiation_protection/blm_b_mbd.01_r/State != FAULT && \
+tango://srv-tango-srf:20000/mbd/radiation_protection/blm_b_mbd.02_l/State != FAULT && \
+tango://srv-tango-srf:20000/mbd/radiation_protection/blm_b_mbd.02_r/State != FAULT && \
+tango://srv-tango-srf:20000/mbd/magnet/b_mbd.01/State != FAULT && \
+tango://srv-tango-srf:20000/mbd/magnet/b_mbd.02/State != FAULT;Stato Bending fel
+#
+#
+############ BST ################
+attr;bool;z_internal_fel_bst;0;tango://srv-tango-srf:20000/f/access_control/safety/Linac_bst_1[0] == 1;Stato BST fel
+attr;bool;z_internal_fel1_bst;0;\
+tango://srv-tango-srf:20000/f/access_control/safety/Undulator_bst1_fel1[0] == 1 && \
+tango://srv-tango-srf:20000/f/access_control/safety/Undulator_bst2_fel1[0] == 1;Stato BST fel1
+attr;bool;z_internal_fel2_bst;0;\
+tango://srv-tango-srf:20000/f/access_control/safety/Undulator_bst1_fel2[0] == 1 && \
+tango://srv-tango-srf:20000/f/access_control/safety/Undulator_bst2_fel2[0] == 1;Stato BST fel2
+#
+#
+############ SHUTTER ################
+attr;bool;z_internal_padres1_shutter;0;tango://srv-padres-srf:20000/pfe_f01/interlock/sh_pfe_f01.01/State == OPEN;Stato SHUTTER padres fel1
+#
+attr;bool;z_internal_padres2_shutter;0;tango://srv-padres-srf:20000/pfe_f02/interlock/sh_pfe_f02.01/State == OPEN;Stato SHUTTER padres fel2
+#
+#
+############ multiscreen ################
+attr;bool;z_internal_gun_multiscreen;0;\
+tango://srv-tango-srf:20000/inj/diagnostics/yscr_inj.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/inj/diagnostics/yscr_inj.02/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/inj/diagnostics/yscr_inj.03/Instrument == 'WM';Stato multiscreen Gun
+#
+attr;bool;z_internal_linac_multiscreen;0;\
+tango://srv-tango-srf:20000/l00/diagnostics/mscr_l00.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/lh/diagnostics/mscr_lh.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/lh/diagnostics/mscr_lh.02/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/lh/diagnostics/mscr_lh.03/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/lh/diagnostics/mscr_lh.04/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/l01/diagnostics/mscr_l01.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/bc01/diagnostics/mscr_bc01.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/bc01/diagnostics/mscr_bc01.02/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/bc01/diagnostics/mscr_bc01.03/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/bc01/diagnostics/mscr_bc01.04/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/l03/diagnostics/mscr_l03.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/bc02/diagnostics/mscr_bc02.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/tls/diagnostics/mscr_tls.01/Instrument == 'WM';Stato multiscreen Linac
+# tango://srv-tango-srf:20000/l04/diagnostics/mscr_l04.01/Instrument == 'WM' && \
+#
+attr;bool;z_internal_fel_multiscreen;0;tango://srv-tango-srf:20000/scl/diagnostics/mscr_scl.01/Instrument == 'WM';Stato multiscreen fel
+#
+attr;bool;z_internal_fel1_multiscreen;0;\
+tango://srv-tango-srf:20000/sfel01/diagnostics/mscr_sfel01.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/sfel01/diagnostics/mscr_sfel01.02/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/mbd_fel01/diagnostics/mscr_mbd_fel01.01/Instrument == 'WM';Stato multiscreen fel1
+#
+attr;bool;z_internal_fel2_multiscreen;0;\
+tango://srv-tango-srf:20000/sfel02/diagnostics/mscr_sfel02.01/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/sfel02/diagnostics/mscr_sfel02.02/Instrument == 'WM' && \
+tango://srv-tango-srf:20000/mbd_fel02/diagnostics/mscr_mbd_fel02.01/Instrument == 'WM';Stato multiscreen fel2
+#
+#
+######################################################
+#
+attr;bool;beamto_gun;0;\
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_gun_valves && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_gun_multiscreen;Stato gun
+# tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_gun_bending && \
+#
+attr;bool;beamto_linac;0;\
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_linac_valves && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_linac_multiscreen;Stato Linac
+# tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_linac_bending && \
+#
+attr;bool;beamto_fel;0;\
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel_valves && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel_bst && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel_multiscreen;Stato fel
+# tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel_bending && \
+#
+attr;bool;beamto_fel1;0;\
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel1_valves && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel1_bst && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel1_multiscreen;Stato fel1
+#
+attr;bool;beamto_fel2;0;\
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel2_valves && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel2_bst && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_fel2_multiscreen;Stato fel2
+#
+attr;bool;beamto_padres;0;\
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_padres_valves && \
+((tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel1 && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_padres1_valves && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_padres1_shutter) || \
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel2 && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_padres2_valves && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_padres2_shutter));Stato padres
+#
+attr;bool;beamto_lines;0;tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_lines_valves==1;Stato lines
+#
+attr;long;beamto;0;\
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun + \
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_linac) + \
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_linac && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel) + \
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_linac && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel + \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel1) + \
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_linac && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel + \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel2) * 2 + \
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_linac && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel + \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel1 && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_padres) * 2 + \
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_linac && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel + \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel2 && \
+tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_padres) * 2\
+;0=>N.A.,1=>gun,2=>linac,3=>fel(common),4=>fel1,5=>fel2,6=>fel1+padres,7=>fel2+padres
+#(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun && \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_linac && \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel + \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel1 && \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_padres && \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_lines_valves==1) * 2 + \
+#(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_gun && \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_linac && \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel + \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel2 && \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_padres && \
+#tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_lines_valves==1) * 2\
+#;0=>N.A.,1=>gun,2=>linac,3=>fel(common),4=>fel1,5=>fel2,6=>fel1+padres,7=>fel2+padres,8=>fel1+lines,9=>fel2+lines
+#
+attr;long;z_internal_seed_NumShut;0;\
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel2?\
+tango://srv-tango-srf:20000/f/interlock/shut_att_fel02.01/StatNumShut:\
+tango://srv-tango-srf:20000/f/interlock/shut_att_fel01.01/StatNumShut)\
+;seed_NumShut
+#
+attr;long;z_internal_seed_NumAtt;0;\
+(tango://srv-tango-srf:20000/f/misc/fermistatus/beamto_fel2?\
+tango://srv-tango-srf:20000/f/interlock/shut_att_fel02.01/StatNumAtt:\
+tango://srv-tango-srf:20000/f/interlock/shut_att_fel01.01/StatNumAtt)\
+;seed_NumAtt
+#
+attr;long;seed_laser_status;0;\
+(tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_seed_NumShut==2?\
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_seed_NumAtt+2:\
+tango://srv-tango-srf:20000/f/misc/fermistatus/z_internal_seed_NumShut)\
+;0=>"---",1=>"ATTENUATING",2=>"OPEN",3=>"---",4=>"---",5=>"CLOSED",6=>"OPEN",7=>"---"
+#
+attr;double;SL_pulse_length;0;tango://srv-tango-srf:20000/f/misc/beam_status_f/SL_pulse_length*1000;SL_pulse_length
+#
+attr;double;e_beam_energy;0;\
+max(tango://srv-tango-srf:20000/dbd/magnet/b_dbd.01/magnetEnergy,tango://srv-tango-srf:20000/scl/magnet/b_scl.01/magnetEnergy);e_beam_energy
+#
+attr;double;seed_laser_pulse_energy;0;tango://srv-tango-srf:20000/sl/energy_meter/emcalib_sl.01/Energy*1000000;seed_laser_pulse_energy
+#
+attr;double;spectro_wavelength;0;1239639.0 / tango://srv-padres-srf:20000/pos/pesp/ccd-pesp_pos.01/SpectrumPeakPos_d;spectro_wavelength
+#
+attr;double;i0rms;0;tango://srv-padres-srf:20000/pfe_f01/diagnostics/iom_pfe_f01.01/IaCleanStd / tango://srv-padres-srf:20000/pfe_f01/diagnostics/iom_pfe_f01.01/IaClean*100;i0rms
+#
