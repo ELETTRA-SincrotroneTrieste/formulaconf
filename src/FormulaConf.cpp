@@ -1,5 +1,5 @@
 /*----- PROTECTED REGION ID(FormulaConf.cpp) ENABLED START -----*/
-static const char *RcsId = "$Id:  $";
+static const char *RcsId = "$Id: FormulaConf.cpp,v 1.25 2017-04-13 08:10:22 graziano Exp $";
 //=============================================================================
 //
 // file :        FormulaConf.cpp
@@ -27,10 +27,10 @@ static const char *RcsId = "$Id:  $";
 // You should have received a copy of the GNU General Public License
 // along with Tango.  If not, see <http://www.gnu.org/licenses/>.
 // 
-// $Author:  $
+// $Author: graziano $
 //
-// $Revision:  $
-// $Date:  $
+// $Revision: 1.25 $
+// $Date: 2017-04-13 08:10:22 $
 //
 // $HeadURL:  $
 //
@@ -63,10 +63,11 @@ std::map<parser_id, std::string> rule_names;  //only for log messages
 //  The following table gives the correspondence
 //  between command and method names.
 //
-//  Command name  |  Method name
+//  Command name      |  Method name
 //================================================================
-//  State         |  Inherited (no method)
-//  Status        |  Inherited (no method)
+//  State             |  Inherited (no method)
+//  Status            |  Inherited (no method)
+//  GetFormulaValues  |  get_formula_values
 //================================================================
 
 //================================================================
@@ -912,6 +913,45 @@ void FormulaConf::add_dynamic_attributes()
 
 //--------------------------------------------------------
 /**
+ *	Command GetFormulaValues related method
+ *	Description: Return actual values of attribute involved in a formula as:
+ *               attr_name=value;attr_name=value;...
+ *
+ *	@param argin Formula name
+ *	@returns Formula values as: attr_name=value;attr_name=value;...
+ */
+//--------------------------------------------------------
+Tango::DevVarStringArray *FormulaConf::get_formula_values(Tango::DevString argin)
+{
+	Tango::DevVarStringArray *argout;
+	DEBUG_STREAM << "FormulaConf::GetFormulaValues()  - " << device_name << endl;
+	/*----- PROTECTED REGION ID(FormulaConf::get_formula_values) ENABLED START -----*/
+	
+	//	Add your own code
+	map<string,vector<attr_desc_t> >::iterator it_attr = att_data.find(argin);
+
+	if(it_attr == att_data.end())
+	{
+		Tango::Except::throw_exception( \
+							(const char*)"Attribute Not Found", \
+							(const char*)"Attribute Not Found", \
+							__FUNCTION__, Tango::ERR);
+	}
+	argout = new Tango::DevVarStringArray();
+	argout->length(it_attr->second.size());
+	size_t ind=0;
+	for(vector<attr_desc_t>::iterator it_rem_attr = it_attr->second.begin(); it_rem_attr != it_attr->second.end(); it_rem_attr++)
+	{
+		stringstream tmp;
+		tmp << "formula=" << it_rem_attr->formula << ";" << it_rem_attr->attr_values;
+		(*argout)[ind++] = Tango::string_dup(tmp.str().c_str());
+	}
+	
+	/*----- PROTECTED REGION END -----*/	//	FormulaConf::get_formula_values
+	return argout;
+}
+//--------------------------------------------------------
+/**
  *	Method      : FormulaConf::add_dynamic_commands()
  *	Description : Create the dynamic commands if any
  *                for specified device.
@@ -970,6 +1010,39 @@ void FormulaConf::create_dynamic_attributes(vector<string> attr_config)
 			if (!tmp.formula.empty() )
 			{
 				string::size_type pos = tmp.formula.find_last_not_of(' ');
+				if (pos != tmp.formula.length()-1)
+				{
+					if ( pos == string::npos )
+						pos = -1;
+					tmp.formula.erase(pos+1);
+				}
+			}
+			//remove trailing \0
+			if (!tmp.formula.empty() )
+			{
+				string::size_type pos = tmp.formula.find_last_not_of('\0');
+				if (pos != tmp.formula.length()-1)
+				{
+					if ( pos == string::npos )
+						pos = -1;
+					tmp.formula.erase(pos+1);
+				}
+			}
+			//remove trailing \n
+			if (!tmp.formula.empty() )
+			{
+				string::size_type pos = tmp.formula.find_last_not_of('\n');
+				if (pos != tmp.formula.length()-1)
+				{
+					if ( pos == string::npos )
+						pos = -1;
+					tmp.formula.erase(pos+1);
+				}
+			}
+			//remove trailing \r
+			if (!tmp.formula.empty() )
+			{
+				string::size_type pos = tmp.formula.find_last_not_of('\r');
 				if (pos != tmp.formula.length()-1)
 				{
 					if ( pos == string::npos )
@@ -2137,13 +2210,10 @@ void EventCallBack::push_event(Tango::EventData* ev)
 						bool formula_err = false;
 						for(vector<attr_desc_t>::iterator it_rem_attr = it_attr->second.begin(); it_rem_attr != it_attr->second.end(); it_rem_attr++)
 						{
-							//cout <<(int)now_log.tv_sec<<" "<< __FUNCTION__ << " looping " << it_ev->formula<<endl;
-							//cout<<(int)now_log.tv_sec<<" "<<"EventCallBack::push_event event_name="<<ev->attr_name<<" evaluating loc attr: "<<*it_loc_attr<<" evaluating formula: "<<it_rem_attr->formula<<endl;
-							string attr_values;
 							double res = 0.0;	//initialize to false
 							try
 							{
-								res = mydevice->eval_formula(it_rem_attr->formula_tree, *it_loc_attr, attr_values);
+								res = mydevice->eval_formula(it_rem_attr->formula_tree, *it_loc_attr, it_rem_attr->attr_values);
 							}
 							catch(string &err)
 							{

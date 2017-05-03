@@ -1,5 +1,5 @@
 /*----- PROTECTED REGION ID(FormulaConfStateMachine.cpp) ENABLED START -----*/
-static const char *RcsId = "$Id:  $";
+static const char *RcsId = "$Id: FormulaConfStateMachine.cpp,v 1.5 2017-04-13 08:10:22 graziano Exp $";
 //=============================================================================
 //
 // file :        FormulaConfStateMachine.cpp
@@ -23,10 +23,10 @@ static const char *RcsId = "$Id:  $";
 // You should have received a copy of the GNU General Public License
 // along with Tango.  If not, see <http://www.gnu.org/licenses/>.
 // 
-// $Author:  $
+// $Author: graziano $
 //
-// $Revision:  $
-// $Date:  $
+// $Revision: 1.5 $
+// $Date: 2017-04-13 08:10:22 $
 //
 // $HeadURL:  $
 //
@@ -198,6 +198,21 @@ bool FormulaConf::is_LongSpectrumDyn_allowed(TANGO_UNUSED(Tango::AttReqType type
 //=================================================
 //		Commands Allowed Methods
 //=================================================
+
+//--------------------------------------------------------
+/**
+ *	Method      : FormulaConf::is_GetFormulaValues_allowed()
+ *	Description : Execution allowed for GetFormulaValues attribute
+ */
+//--------------------------------------------------------
+bool FormulaConf::is_GetFormulaValues_allowed(TANGO_UNUSED(const CORBA::Any &any))
+{
+	//	Not any excluded states for GetFormulaValues command.
+	/*----- PROTECTED REGION ID(FormulaConf::GetFormulaValuesStateAllowed) ENABLED START -----*/
+	
+	/*----- PROTECTED REGION END -----*/	//	FormulaConf::GetFormulaValuesStateAllowed
+	return true;
+}
 
 
 /*----- PROTECTED REGION ID(FormulaConf::FormulaConfStateAllowed.AdditionalMethods) ENABLED START -----*/

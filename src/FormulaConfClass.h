@@ -26,10 +26,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Tango.  If not, see <http://www.gnu.org/licenses/>.
 // 
-// $Author:  $
+// $Author: graziano $
 //
-// $Revision:  $
-// $Date:  $
+// $Revision: 1.7 $
+// $Date: 2017-04-13 08:10:22 $
 //
 // $HeadURL:  $
 //
@@ -178,6 +178,33 @@ public:
 		{(static_cast<FormulaConf *>(dev))->read_LongSpectrumDyn(att);}
 	virtual bool is_allowed(Tango::DeviceImpl *dev,Tango::AttReqType ty)
 		{return (static_cast<FormulaConf *>(dev))->is_LongSpectrumDyn_allowed(ty);}
+};
+
+
+//=========================================
+//	Define classes for commands
+//=========================================
+//	Command GetFormulaValues class definition
+class GetFormulaValuesClass : public Tango::Command
+{
+public:
+	GetFormulaValuesClass(const char   *name,
+	               Tango::CmdArgType in,
+				   Tango::CmdArgType out,
+				   const char        *in_desc,
+				   const char        *out_desc,
+				   Tango::DispLevel  level)
+	:Command(name,in,out,in_desc,out_desc, level)	{};
+
+	GetFormulaValuesClass(const char   *name,
+	               Tango::CmdArgType in,
+				   Tango::CmdArgType out)
+	:Command(name,in,out)	{};
+	~GetFormulaValuesClass() {};
+	
+	virtual CORBA::Any *execute (Tango::DeviceImpl *dev, const CORBA::Any &any);
+	virtual bool is_allowed (Tango::DeviceImpl *dev, const CORBA::Any &any)
+	{return (static_cast<FormulaConf *>(dev))->is_GetFormulaValues_allowed(any);}
 };
 
 

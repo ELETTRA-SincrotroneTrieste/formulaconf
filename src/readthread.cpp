@@ -7,9 +7,12 @@
 //
 // $Author: graziano $ 
 //
-// $Revision: 1.13 $
+// $Revision: 1.15 $
 //
 // $Log: readthread.cpp,v $
+// Revision 1.15  2017-04-13 08:10:22  graziano
+// added command GetFormulaValues
+//
 // Revision 1.13  2016-06-09 11:59:01  graziano
 // added quality
 //
@@ -64,7 +67,7 @@
 #include "FormulaConf.h"
 #include <math.h>
 
-static const char __FILE__rev[] = __FILE__ " $Revision: 1.13 $";
+static const char __FILE__rev[] = __FILE__ " $Revision: 1.15 $";
 
 namespace FormulaConf_ns
 {

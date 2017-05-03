@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <pogoDsl:PogoSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pogoDsl="http://www.esrf.fr/tango/pogo/PogoDsl">
-  <classes name="FormulaConf" pogoRevision="9.1">
-    <description description="Configurable formula" title="FormulaConf" sourcePath="/home/graziano/workspace/git/servers/formulaconf/src" language="Cpp" filestogenerate="XMI   file,Code files,Protected Regions" license="GPL" copyright="" hasMandatoryProperty="false" hasConcreteProperty="true" hasAbstractCommand="false" hasAbstractAttribute="false">
+  <classes name="FormulaConf" pogoRevision="9.4">
+    <description description="Configurable formula" title="FormulaConf" sourcePath="/home/graziano/ws/formulaconf/src" language="Cpp" filestogenerate="XMI   file,Code files,Protected Regions" license="GPL" copyright="" hasMandatoryProperty="false" hasConcreteProperty="true" hasAbstractCommand="false" hasAbstractAttribute="false">
       <inheritances classname="Device_Impl" sourcePath=""/>
       <identification contact="at elettra.eu - graziano.scalamera" author="graziano.scalamera" emailDomain="elettra.eu" classFamily="SoftwareSystem" siteSpecific="" platform="Unix Like" bus="Not Applicable" manufacturer="none" reference=""/>
     </description>
@@ -40,6 +40,15 @@
         <type xsi:type="pogoDsl:ConstStringType"/>
       </argout>
       <status abstract="true" inherited="true" concrete="true"/>
+    </commands>
+    <commands name="GetFormulaValues" description="Return actual values of attribute involved in a formula as:&#xA;attr_name=value;attr_name=value;..." execMethod="get_formula_values" displayLevel="OPERATOR" polledPeriod="0" isDynamic="false">
+      <argin description="Formula name">
+        <type xsi:type="pogoDsl:StringType"/>
+      </argin>
+      <argout description="Formula values as: attr_name=value;attr_name=value;...">
+        <type xsi:type="pogoDsl:StringArrayType"/>
+      </argout>
+      <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
     </commands>
     <attributes name="Version" attType="Scalar" rwType="READ" displayLevel="OPERATOR" polledPeriod="0" maxX="" maxY="" allocReadMember="true" isDynamic="false">
       <dataType xsi:type="pogoDsl:StringType"/>
@@ -113,6 +122,6 @@
       <status abstract="false" inherited="false" concrete="true" concreteHere="true"/>
       <properties description="" label="" unit="" standardUnit="" displayUnit="" format="" maxValue="" minValue="" maxAlarm="" minAlarm="" maxWarning="" minWarning="" deltaTime="" deltaValue=""/>
     </dynamicAttributes>
-    <preferences docHome="./doc_html" makefileHome="/usr/local/tango-8.1.2.c/share/pogo/preferences"/>
+    <preferences docHome="./doc_html" makefileHome="/usr/local/tango-9.2.5a/share/pogo/preferences"/>
   </classes>
 </pogoDsl:PogoSystem>

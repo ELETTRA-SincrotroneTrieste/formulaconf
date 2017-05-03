@@ -1,7 +1,7 @@
 /*----- PROTECTED REGION ID(FormulaConfClass.cpp) ENABLED START -----*/
-static const char *RcsId      = "$Id:  $";
+static const char *RcsId      = "$Id: FormulaConfClass.cpp,v 1.4 2017-04-13 08:10:22 graziano Exp $";
 static const char *TagName    = "$Name:  $";
-static const char *CvsPath    = "$Source:  $";
+static const char *CvsPath    = "$Source: /home/cvsadm/cvsroot/fermi/servers/formulaconf/src/FormulaConfClass.cpp,v $";
 static const char *SvnPath    = "$HeadURL:  $";
 static const char *HttpServer = "http://www.esrf.eu/computing/cs/tango/tango_doc/ds_doc/";
 //=============================================================================
@@ -31,10 +31,10 @@ static const char *HttpServer = "http://www.esrf.eu/computing/cs/tango/tango_doc
 // You should have received a copy of the GNU General Public License
 // along with Tango.  If not, see <http://www.gnu.org/licenses/>.
 // 
-// $Author:  $
+// $Author: graziano $
 //
-// $Revision:  $
-// $Date:  $
+// $Revision: 1.4 $
+// $Date: 2017-04-13 08:10:22 $
 //
 // $HeadURL:  $
 //
@@ -158,6 +158,25 @@ FormulaConfClass *FormulaConfClass::instance()
 //===================================================================
 //	Command execution method calls
 //===================================================================
+//--------------------------------------------------------
+/**
+ * method : 		GetFormulaValuesClass::execute()
+ * description : 	method to trigger the execution of the command.
+ *
+ * @param	device	The device on which the command must be executed
+ * @param	in_any	The command input data
+ *
+ *	returns The command output data (packed in the Any object)
+ */
+//--------------------------------------------------------
+CORBA::Any *GetFormulaValuesClass::execute(Tango::DeviceImpl *device, const CORBA::Any &in_any)
+{
+	cout2 << "GetFormulaValuesClass::execute(): arrived" << endl;
+	Tango::DevString argin;
+	extract(in_any, argin);
+	return insert((static_cast<FormulaConf *>(device))->get_formula_values(argin));
+}
+
 
 //===================================================================
 //	Properties management
@@ -577,6 +596,15 @@ void FormulaConfClass::command_factory()
 	
 	/*----- PROTECTED REGION END -----*/	//	FormulaConfClass::command_factory_before
 
+
+	//	Command GetFormulaValues
+	GetFormulaValuesClass	*pGetFormulaValuesCmd =
+		new GetFormulaValuesClass("GetFormulaValues",
+			Tango::DEV_STRING, Tango::DEVVAR_STRINGARRAY,
+			"Formula name",
+			"Formula values as: attr_name=value;attr_name=value;...",
+			Tango::OPERATOR);
+	command_list.push_back(pGetFormulaValuesCmd);
 
 	/*----- PROTECTED REGION ID(FormulaConfClass::command_factory_after) ENABLED START -----*/
 	

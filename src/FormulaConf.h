@@ -22,10 +22,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Tango.  If not, see <http://www.gnu.org/licenses/>.
 // 
-// $Author:  $
+// $Author: graziano $
 //
-// $Revision:  $
-// $Date:  $
+// $Revision: 1.15 $
+// $Date: 2017-04-13 08:10:22 $
 //
 // $HeadURL:  $
 //
@@ -120,6 +120,7 @@ typedef struct
 	string type;
 	bool first_push;
 	//Tango::DevBoolean val;
+	string attr_values;
 
 } attr_desc_t;
 
@@ -418,6 +419,16 @@ public:
 
 //	Command related methods
 public:
+	/**
+	 *	Command GetFormulaValues related method
+	 *	Description: Return actual values of attribute involved in a formula as:
+	 *               attr_name=value;attr_name=value;...
+	 *
+	 *	@param argin Formula name
+	 *	@returns Formula values as: attr_name=value;attr_name=value;...
+	 */
+	virtual Tango::DevVarStringArray *get_formula_values(Tango::DevString argin);
+	virtual bool is_GetFormulaValues_allowed(const CORBA::Any &any);
 
 
 	//--------------------------------------------------------

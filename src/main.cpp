@@ -1,5 +1,5 @@
 /*----- PROTECTED REGION ID(FormulaConf::main.cpp) ENABLED START -----*/
-static const char *RcsId = "$Id:  $";
+static const char *RcsId = "$Id: main.cpp,v 1.3 2017-04-13 08:10:22 graziano Exp $";
 //=============================================================================
 //
 // file :        main.cpp
@@ -26,10 +26,10 @@ static const char *RcsId = "$Id:  $";
 // You should have received a copy of the GNU General Public License
 // along with Tango.  If not, see <http://www.gnu.org/licenses/>.
 // 
-// $Author:  $
+// $Author: graziano $
 //
-// $Revision:  $
-// $Date:  $
+// $Revision: 1.3 $
+// $Date: 2017-04-13 08:10:22 $
 //
 // $HeadURL:  $
 //
