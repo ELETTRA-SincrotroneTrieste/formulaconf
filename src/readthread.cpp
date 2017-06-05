@@ -7,9 +7,15 @@
 //
 // $Author: graziano $ 
 //
-// $Revision: 1.15 $
+// $Revision: 1.17 $
 //
 // $Log: readthread.cpp,v $
+// Revision 1.17  2017-04-28 11:48:34  graziano
+// fixed GetFormulaValues command
+//
+// Revision 1.16  2017-04-28 10:23:44  graziano
+// fixed GetFormulaValues command
+//
 // Revision 1.15  2017-04-13 08:10:22  graziano
 // added command GetFormulaValues
 //
@@ -67,7 +73,7 @@
 #include "FormulaConf.h"
 #include <math.h>
 
-static const char __FILE__rev[] = __FILE__ " $Revision: 1.15 $";
+static const char __FILE__rev[] = __FILE__ " $Revision: 1.17 $";
 
 namespace FormulaConf_ns
 {
@@ -179,11 +185,11 @@ void readthread::run(void *)
 					{
 						//cout << __FUNCTION__ << " looping " << it_ev->formula<<endl;
 
-						string attr_values;
 						double res = 0.0;	//initialize to false
 						try
 						{
-							res = (static_cast<FormulaConf *>(device))->eval_formula(it_rem_attr->formula_tree, *it_loc_attr, attr_values);
+							it_rem_attr->attr_values = string("");
+							res = (static_cast<FormulaConf *>(device))->eval_formula(it_rem_attr->formula_tree, *it_loc_attr, it_rem_attr->attr_values);
 						}
 						catch(string &err)
 						{
